@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+</head>
+<body>
+    <h1>Library Management System</h1>
+    <form action="/borrow" method="get">
+        <button type="submit" name="book_title" value="Ram">Borrow Ram</button>
+        <button type="submit" name="book_title" value="Krishna">Borrow Krishna</button>
+        <button type="submit" name="book_title" value="Laxman">Borrow Laxman</button>
+        <button type="submit" name="book_title" value="Sita">Borrow Sita</button>
+    </form>
+    <form action="/return" method="get">
+        <button type="submit" name="Ram">Return Ram</button>
+        <button type="submit" name="Krishna">Return Krishna</button>
+        <button type="submit" name="book_title" value="Laxman">Return Laxman</button>
+        <button type="submit" name="book_title" value="Sita">Return Sita</button>
+    </form>
+    <a href="/view-count">View Count</a>
+</body>
+</html>

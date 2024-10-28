@@ -1,0 +1,512 @@
+https://www.ashidiamonds.com/pbi/pbireports.aspx
+https://www.ashidiamonds.com/PBI/pbireports.aspx
+	
+https://www.ashidiamonds.com/PBI/PBIreports.aspx
+https://www.ashidiamonds.com/pbi/PBIREPORTS.ASPX
+
+
+Markmgr@test.com
+------------
+sumitrawat@avalonsolution.com
+Purchasing 
+-----------------------
+ameykekre@avalonsolution.com
+Sales Associate Access (Retail Price)
+-----------------------
+avalontester4@gmail.com
+PM+AM
+-----------------------
+RANUBORKAR@AVALONSOLUTION.COM
+AM
+-----------------------
+
+
+BETA
+-----------------------
+avalontester7@gmail.com
+Sales Associate 
+-----------------------
+
+ameykekre@avalonsolution.com
+Marketing Manage
+-----------------------
+
+avalontester3@gmail.com
+Purchasing Manager 
+-----------------------
+
+avalontester1112@gmail.com
+Accounting Manager
+-----------------------
+
+
+
+
+Staging:- 
+demomm@test.com (Marketing Manager)
+---------------------
+demoam@test.com (Accounts Manager)
+-----------------------
+demopm@test.com (Purchase Manager)
+-----------------------
+demosa@test.com (Sales Associate)
+-----------------------
+
+
+
+
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+
+import org.testng.annotations.Test;
+
+	public class APITestCases {		
+  	// Your code
+    	}
+
+
+    	public void getWishlist() {
+        // Your GET request to get wishlist items
+    	}
+
+
+    	public void removeStyleFromWishlist() {
+        // Your request to remove item from wishlist
+    	}
+
+
+    @Test
+    public void testAddRemoveStyleFromWishlist() {
+        // Add style to wishlist
+        addStyleToWishlist();
+
+        // Get wishlist to check if style added
+        getWishlist();
+
+        // Remove style from wishlist
+        removeStyleFromWishlist();
+
+        // Get wishlist again to check if style removed
+        getWishlist();
+    }
+}
+
+
+
+
+
+
+
+
+
+import io.restassured.response.Response;
+import static io.restassured.RestAssured.*;
+
+public void exampleAPITest2() {
+    // Get Wish List Items For User :avalontester7@gmail.com
+    Response response = given()
+        .baseUri("http://192.168.1.100:8099")
+        .basePath("/api/WishList/getWishlist")
+        .queryParam("username", "avalontester7@gmail.com")
+        .queryParam("jewelsoftid", "CARTJA")
+        .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTE0NjYxOTYsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NzI5OSIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NzI5OSJ9.RrhDPYkWTFPMnY8yP-FPWJExRF6D7Z0R_f98o2mWHNc")
+        
+    // When
+    .when()
+        .get();
+    
+    // Then
+    response.then()
+        .log().all() // Log all details of the response
+        .statusCode(200); // Replace 200 with the expected status code
+
+    // Parsing JSON response and finding style ID 21030
+    String responseBody = response.getBody().asString();
+    // Your JSON parsing logic here, depending on the structure of the response
+    // For example, if it's an array of items, you would iterate through the array
+    // and check each item's style ID.
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[RemoteTestNG] detected TestNG version 7.10.1
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Fri, 24 May 2024 12:38:12 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{
+    "responseCode": "200",
+    "responseStatus": "success",
+    "responseMessage": "Product Details For Style ID :20197",
+    "responseData": [
+        {
+            "itemID": 20197,
+            "itemName": "EMERALD SHAPE SEMI-MOUNT HALO DIAMOND ENGAGEMENT RING",
+            "itemCD": "244G5FHWG-SM",
+            "imgUrl": "https://i.jewelexchange.net/service/Images/1/2/244G5FHWG-SM/Web/244G5FHWG-SM_ANGVEW_MEDRES.jpg",
+            "jewelsoftDesc": null,
+            "shortDesc": "1/3 Ctw Emerald Cut Semi-Mount Diamond Engagement Ring in 14K White Gold",
+            "longDesc": null,
+            "stockSize": "6.5",
+            "metalKarat": "14 KT",
+            "metalColor": "WHITE GOLD",
+            "metalWt": "4.60 GMS.",
+            "stoneType": "",
+            "stoneShap": "",
+            "stoneWt": null,
+            "stoneColor": "",
+            "stoneClrty": "",
+            "stoneQuality": "",
+            "stoneSizeRange": "0.85-1.20 Ct",
+            "noofDiamonds": "38",
+            "diamondShape": "Round",
+            "diamondWt": "0.35 CT",
+            "diamondColor": "G - H",
+            "diamoneClrity": "SI2 - I1",
+            "cS_TYPE": "",
+            "cS_SHAPE": "",
+            "cS_SIZE_DISPLAY": "",
+            "cS_QUALITY": "",
+            "totalDiamondWt": "0.35",
+            "chainType": "",
+            "chainSize": "0",
+            "chainlength": "0",
+            "similarStyles": "[\"16322\",\"16364\",\"15828\",\"15829\",\"16323\",\"16324\",\"17063\",\"21380\",\"16027\",\"17064\",\"17065\",\"15984\",\"17066\",\"16325\",\"15833\",\"16326\",\"15835\",\"17067\",\"16028\",\"15836\",\"15837\",\"17068\",\"17069\",\"16029\",\"17070\"]",
+            "iS_SOLITAIR": "N",
+            "iS_NEW_ITEM": false,
+            "iS_TOP_SELLER_ITEM": true,
+            "iS_OVER_STOCK_ITEM": false
+        }
+    ]
+}
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Fri, 24 May 2024 12:38:13 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{
+    "responseCode": "200",
+    "responseStatus": "success",
+    "responseMessage": "Get Order Cart Items For Retailer :CARTJA",
+    "responseData": [
+        {
+            "itemID": 11092,
+            "itemQty": 3
+        },
+        {
+            "itemID": 4910,
+            "itemQty": 3
+        },
+        {
+            "itemID": 19693,
+            "itemQty": 6
+        },
+        {
+            "itemID": 8242,
+            "itemQty": 3
+        },
+        {
+            "itemID": 9844,
+            "itemQty": 3
+        },
+        {
+            "itemID": 9971,
+            "itemQty": 3
+        },
+        {
+            "itemID": 19429,
+            "itemQty": 12
+        },
+        {
+            "itemID": 12681,
+            "itemQty": 12
+        },
+        {
+            "itemID": 19177,
+            "itemQty": 9
+        },
+        {
+            "itemID": 19433,
+            "itemQty": 12
+        },
+        {
+            "itemID": 19431,
+            "itemQty": 9
+        },
+        {
+            "itemID": 20983,
+            "itemQty": 9
+        },
+        {
+            "itemID": 15700,
+            "itemQty": 9
+        },
+        {
+            "itemID": 15984,
+            "itemQty": 12
+        },
+        {
+            "itemID": 19430,
+            "itemQty": 3
+        },
+        {
+            "itemID": 17098,
+            "itemQty": 3
+        },
+        {
+            "itemID": 23041,
+            "itemQty": 6
+        },
+        {
+            "itemID": 20201,
+            "itemQty": 3
+        },
+        {
+            "itemID": 7404,
+            "itemQty": 3
+        },
+        {
+            "itemID": 23047,
+            "itemQty": 6
+        },
+        {
+            "itemID": 20198,
+            "itemQty": 3
+        },
+        {
+            "itemID": 14198,
+            "itemQty": 3
+        },
+        {
+            "itemID": 7681,
+            "itemQty": 60
+        },
+        {
+            "itemID": 21134,
+            "itemQty": 114
+        },
+        {
+            "itemID": 7679,
+            "itemQty": 57
+        },
+        {
+            "itemID": 17437,
+            "itemQty": 57
+        },
+        {
+            "itemID": 20122,
+            "itemQty": 57
+        },
+        {
+            "itemID": 15884,
+            "itemQty": 114
+        },
+        {
+            "itemID": 22704,
+            "itemQty": 114
+        },
+        {
+            "itemID": 10369,
+            "itemQty": 6
+        },
+        {
+            "itemID": 17426,
+            "itemQty": 3
+        },
+        {
+            "itemID": 20246,
+            "itemQty": 3
+        },
+        {
+            "itemID": 17429,
+            "itemQty": 3
+        },
+        {
+            "itemID": 21068,
+            "itemQty": 3
+        },
+        {
+            "itemID": 21000,
+            "itemQty": 6
+        }
+    ]
+}
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Fri, 24 May 2024 12:38:14 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{
+    "responseCode": "404",
+    "responseStatus": "success",
+    "responseMessage": "There is no Items in Wish List For User :avalontester7@gmail.com",
+    "responseData": [
+        
+    ]
+}
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Fri, 24 May 2024 12:38:14 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{
+    "responseCode": "200",
+    "responseStatus": "success",
+    "responseMessage": "1 Items Added to Order Cart For Jeweler Id :CARTJA",
+    "responseData": null
+}
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Fri, 24 May 2024 12:38:14 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{
+    "responseCode": "200",
+    "responseStatus": "success",
+    "responseMessage": "2 Items Added to Order Cart For Jeweler Id :CARTJA",
+    "responseData": null
+}
+Remove wala test 
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Fri, 24 May 2024 12:38:15 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{
+    "responseCode": "402",
+    "responseStatus": "error",
+    "responseMessage": "Item does not exist.",
+    "responseData": null
+}
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Fri, 24 May 2024 12:38:15 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{
+    "responseCode": "200",
+    "responseStatus": "success",
+    "responseMessage": "1 Items Added to WishLIst For User :avalontester7@gmail.com",
+    "responseData": null
+}
+PASSED: API.apihash1.exampleAPITest2
+PASSED: API.apihash1.exampleAPITest7
+PASSED: API.apihash1.exampleAPITest
+PASSED: API.apihash1.exampleAPITest4
+PASSED: API.apihash1.exampleAPITest5
+PASSED: API.apihash1.exampleAPITest1
+PASSED: API.apihash1.exampleAPITest8
+
+===============================================
+    Default test
+    Tests run: 7, Failures: 0, Skips: 0
+===============================================
+
+
+===============================================
+Default suite
+Total tests run: 7, Passes: 7, Failures: 0, Skips: 0
+===============================================
+
+
+
+
+
+
+i have some APIs, 1st - Wishlist status , which shows all the styles from the Wishlist and then 2nd add single style in wishlist and 3rd- remove style from wishlist , these 3 api i have, now i wan to automate this and want to automate test case for these 3, so correct me if i am wrong , ill ceate methods for these api and then call these in @test, first check style already available , if availabe then remove and verify and then add and then again check respose available or not. 
+
+
+
+ public void Getwishlist() {
+        // Get Wish List Items For User :avalontester7@gmail.com
+        given()
+            .baseUri("http://192.168.1.100:8099")
+            .basePath("/api/WishList/getWishlist")
+            .queryParam("username", "avalontester7@gmail.com")
+            .queryParam("jewelsoftid", "CARTJA")
+            .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTE0NjYxOTYsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NzI5OSIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NzI5OSJ9.RrhDPYkWTFPMnY8yP-FPWJExRF6D7Z0R_f98o2mWHNc")
+        
+        // When
+        .when()
+            .get()
+        
+        // Then
+        .then()
+            .log().all() // Log all details of the response
+            .statusCode(200); // Replace 200 with the expected status code
+    }
+
+
+   public void Addstyletowishlist() {
+            // Add item to wishlist
+            String payload = "{\"UserName\": \"avalontester7@gmail.com\", \"jewelsoftIds\": \"CARTJA\", \"itemsData\": [{ \"itemID\": 21030, \"itemQty\": 1 }]}";
+
+            given()
+                .baseUri("http://192.168.1.100:8099")
+                .basePath("/api/WishList/addWishlistItems")
+                .contentType(ContentType.JSON)
+                .body(payload)
+
+            // When
+            .when()
+                .post()
+
+            // Then
+            .then()
+                .log().all() // Log all details of the response
+                .statusCode(200); // Replace 200 with the expected status code
+        }
+
+
+
+    public void Removestylefromwishlist() {
+            // Remove item from wishlist
+            String payload = "{\"UserName\": \"avalontester7@gmail.com\", \"jewelsoftIds\": \"CARTJA\", \"itemsData\": [{ \"itemID\": 21030, \"itemQty\": 1 }]}";
+            	System.out.println("Remove wala test ");
+            given()
+                .baseUri("http://192.168.1.100:8099")
+                .basePath("/api/WishList/removewishlistitem")
+                .contentType(ContentType.JSON)
+                .body(payload)
+
+            // When
+            .when()
+                .post()
+
+            // Then
+            .then()
+                .log().all() // Log all details of the response
+                .statusCode(200); // Replace 200 with the expected status code
+        }
+
+
